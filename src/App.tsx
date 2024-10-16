@@ -120,12 +120,17 @@ const App: React.FC = () => {
               <button
                 key={index}
                 onClick={() => setCurrentPage(index + 1)}
-                className={`p-2 rounded ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+                className={`p-2 rounded ${
+                  currentPage === index + 1
+                    ? `${isDark ? 'bg-blue-800 text-white' : 'bg-blue-500 text-white'}`
+                    : `${isDark ? 'bg-gray-700 text-gray-300' : 'bg-gray-200 text-black'}`
+                }`}
               >
                 {index + 1}
               </button>
             ))}
         </div>
+
 
         {isModalOpen && (
           <ItemForm
